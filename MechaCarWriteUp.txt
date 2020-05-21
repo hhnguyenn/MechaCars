@@ -1,0 +1,64 @@
+MPG Regression
+Ho = m=0
+H1 = m is not 0
+
+Which variables/coefficients provided non-random amt of variance to mpg values?
+vehicle length: p=2.60e-12, reject null hypothesis, not random
+vehicle clearance: p= 5.21e-08, reject null hypothesis, not random
+
+From variables vehicle length, weight, spoiler angle, ground clearance, and AWD, only
+vehicle length (p=2.6 x 10^-12) and vehicle clearance (p=5.21 x 10^-8) are statistically unlikely for random 
+amounts of variance in the linear model.  Therefore, vehicle length and clearance are statistically significance.
+
+Is the slope of the linear model considered to be zero?  Why or why not?
+The slope of the linear model for vehicle weight, angle, and AWD are 0.  P-values prove to not be significantly 
+different.  We are accepting null hypothesis for these variables and dependent values are most likely based on random chance.
+
+Does this linear model predict mpg of MechaCar prototypes effectively?  Why or why not?
+Being that intercept (p=5.08e-08) is also statistically significant,
+there are other variables and factors that are contributing to variations that is not included in our model.
+
+p value is significant, 5.35x10^-11, smaller than 0.05 significance level, so sufficent evidence to reject null hypothesis
+r-squared = .71, 71% of all mpg predictions will be correct when using this linear model.
+
+
+
+
+Suspension Coil Summary
+Lot 1 and Lot 2 has an average PSI of 1500 with a variance of 1.00 and 7.47 respectively.  Lot 3 has an average PSI of 1496.14 
+but with a variance of 170.29.  Being that the company specify that variance should not exceed 100 pounds per inch, 
+Lot 3 does not pass the test.
+
+
+
+
+Suspension Coil two-tailed One Sample T-Test
+Ho = mu = 1500
+H1 = mu is not 1500
+
+alpha = 0.05
+ 
+Lot 3
+p-value = 0.04, smaller than 0.05 significance level, reject null hypothesis, Lot 3 mean is significantly different from population mean.
+
+Lot 2
+p-value = 0.61, greater than 0.05 significance level, do not reject null hypothesis, Lot 2 and population mean is not statistically significant.
+
+Lot 1
+p-value = 1.0, greater than 0.05 significance level, do not reject null hypothesis , Lot 1 and population mean is not statistically significant.
+
+Lot 1 and Lot 2 is most likely by random with Lot 1 having almost 100% chance, data was by random.
+
+
+
+
+Further Study
+For most people, cars are just a mean of transportation so therefore, cost and fuel efficiency the most important.
+So we should look at the correlation between cost of a car and fuel efficiency (miles per gallon) for various companies.  
+Being that electric cars are the future, we can also compute this to how many miles a car can run per charge.
+First, group our cars to different cost categories.
+We can plot with ggplot's geom_boxplot, different vehicle's fuel efficiency by manufacturer, facet_wraping to various cost group to get a better view.
+
+One-way ANOVA test should be used to compare average MPG for all groups of car companies based on cost.  Our null hypothesis would be the means of all groups are
+equal.  Alternative hypothesis is at least one of the means is different from all other groups.  We can run an ANOVA test by comparing MPG based on cost within our 
+own company and also run an ANOVA test on MPG based on cost for other companies in relation to ours.
